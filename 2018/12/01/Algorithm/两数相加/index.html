@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="一点浩然气，千里快哉风">
+<meta name="description" content="给出两个 非空 的链表用来表示两个非负的整数。其中，它们各自的位数是按照 逆序 的方式存储的，并且它们的每个节点只能存储 一位 数字。如果，我们将这两个数相加起来，则会返回一个新的链表来表示它们的和。您可以假设除了数字 0 之外，这两个数都不会以 0 开头。">
 <meta name="keywords" content="Golang|Java|Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="两数相加">
 <meta property="og:url" content="http://dryheart.cn/2018/12/01/Algorithm/两数相加/index.html">
 <meta property="og:site_name" content="写点什么">
-<meta property="og:description" content="一点浩然气，千里快哉风">
+<meta property="og:description" content="给出两个 非空 的链表用来表示两个非负的整数。其中，它们各自的位数是按照 逆序 的方式存储的，并且它们的每个节点只能存储 一位 数字。如果，我们将这两个数相加起来，则会返回一个新的链表来表示它们的和。您可以假设除了数字 0 之外，这两个数都不会以 0 开头。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-01T13:00:47.780Z">
+<meta property="og:updated_time" content="2018-12-01T13:15:44.314Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="两数相加">
-<meta name="twitter:description" content="一点浩然气，千里快哉风">
+<meta name="twitter:description" content="给出两个 非空 的链表用来表示两个非负的整数。其中，它们各自的位数是按照 逆序 的方式存储的，并且它们的每个节点只能存储 一位 数字。如果，我们将这两个数相加起来，则会返回一个新的链表来表示它们的和。您可以假设除了数字 0 之外，这两个数都不会以 0 开头。">
 
 
 
@@ -415,7 +415,13 @@
       
 
       
-        
+        <p>给出两个 <strong>非空</strong> 的链表用来表示两个非负的整数。其中，它们各自的位数是按照 <strong>逆序</strong> 的方式存储的，并且它们的每个节点只能存储 <strong>一位</strong> 数字。<br>如果，我们将这两个数相加起来，则会返回一个新的链表来表示它们的和。<br>您可以假设除了数字 <strong>0</strong> 之外，这两个数都不会以 <strong>0</strong> 开头。<br><a id="more"></a></p>
+<p><strong>示例:</strong></p>
+<blockquote>
+<p><strong>输入</strong>：(2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)<br><strong>输出</strong>：7 -&gt; 0 -&gt; 8<br><strong>原因</strong>：342 + 465 = 807</p>
+</blockquote>
+<p><strong>Java实现</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * public class ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) &#123; val = x; &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">addTwoNumbers</span><span class="params">(ListNode l1, ListNode l2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> pre = <span class="number">0</span>;</span><br><span class="line">        ListNode l = <span class="keyword">null</span>;</span><br><span class="line">        ListNode next = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">while</span> (l1 != <span class="keyword">null</span> || l2 != <span class="keyword">null</span> || pre != <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> v1 = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">int</span> v2 = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">if</span> (l1 != <span class="keyword">null</span>) &#123;</span><br><span class="line">                v1 = l1.val;</span><br><span class="line">                l1 = l1.next;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (l2 != <span class="keyword">null</span>) &#123;</span><br><span class="line">                v2 = l2.val;</span><br><span class="line">                l2 = l2.next;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">int</span> v = v1 + v2 + pre;</span><br><span class="line">            <span class="keyword">if</span> (v &gt;= <span class="number">10</span>) &#123;</span><br><span class="line">                v = v - <span class="number">10</span>;</span><br><span class="line">                pre = <span class="number">1</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                pre = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (l == <span class="keyword">null</span>) &#123;</span><br><span class="line">                l = <span class="keyword">new</span> ListNode(v);</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (next == <span class="keyword">null</span>) &#123;</span><br><span class="line">                next = <span class="keyword">new</span> ListNode(v);</span><br><span class="line">                l.next = next;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                next.next = <span class="keyword">new</span> ListNode(v);</span><br><span class="line">                next = next.next;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> l;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
       
     </div>
     

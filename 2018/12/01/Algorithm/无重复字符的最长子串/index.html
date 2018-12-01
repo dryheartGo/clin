@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="一点浩然气，千里快哉风">
+<meta name="description" content="给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。">
 <meta name="keywords" content="Golang|Java|Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="无重复字符的最长子串">
 <meta property="og:url" content="http://dryheart.cn/2018/12/01/Algorithm/无重复字符的最长子串/index.html">
 <meta property="og:site_name" content="写点什么">
-<meta property="og:description" content="一点浩然气，千里快哉风">
+<meta property="og:description" content="给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-01T13:00:47.782Z">
+<meta property="og:updated_time" content="2018-12-01T13:15:44.314Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="无重复字符的最长子串">
-<meta name="twitter:description" content="一点浩然气，千里快哉风">
+<meta name="twitter:description" content="给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。">
 
 
 
@@ -415,7 +415,21 @@
       
 
       
-        
+        <p>给定一个字符串，请你找出其中不含有重复字符的 <strong>最长子串</strong> 的长度。<br><a id="more"></a></p>
+<p><strong>示例1:</strong></p>
+<blockquote>
+<p><strong>输入</strong>：”abcabcbb”<br><strong>输出</strong>：3<br><strong>解释</strong>：因为无重复字符的最长子串是 “abc”，所以其长度为 3。</p>
+</blockquote>
+<p><strong>示例2:</strong></p>
+<blockquote>
+<p><strong>输入</strong>：”bbbbb”<br><strong>输出</strong>：1<br><strong>解释</strong>：因为无重复字符的最长子串是 “b”，所以其长度为 1。</p>
+</blockquote>
+<p><strong>示例3:</strong></p>
+<blockquote>
+<p><strong>输入</strong>：”pwwkew”<br><strong>输出</strong>：3<br><strong>解释</strong>：因为无重复字符的最长子串是 “wke”，所以其长度为 3。<br>请注意，你的答案必须是 <strong>子串</strong> 的长度，”pwke” 是一个<em>子序列</em>，不是子串。</p>
+</blockquote>
+<p><strong>Java实现</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        StringBuffer sub = <span class="keyword">new</span> StringBuffer();</span><br><span class="line">        <span class="keyword">int</span> size = sub.length();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length(); i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; sub.length(); j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (s.charAt(i) == sub.charAt(j)) &#123;</span><br><span class="line">                    sub = sub.delete(<span class="number">0</span>, j + <span class="number">1</span>);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            sub.append(s.charAt(i));</span><br><span class="line">            <span class="keyword">if</span> (sub.length() &gt; size) &#123;</span><br><span class="line">                size = sub.length();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> size;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
       
     </div>
     
