@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Lazy">
+<meta name="description" content="问题抛出">
 <meta name="keywords" content="activiti,workflow,java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Activiti并发问题">
 <meta property="og:url" content="http://dryheart.cn/2018/12/01/Activiti并发问题/index.html">
 <meta property="og:site_name" content="写点什么">
-<meta property="og:description" content="Lazy">
+<meta property="og:description" content="问题抛出">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-30T17:07:50.202Z">
+<meta property="og:updated_time" content="2018-11-30T17:15:30.854Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Activiti并发问题">
-<meta name="twitter:description" content="Lazy">
+<meta name="twitter:description" content="问题抛出">
 
 
 
@@ -370,6 +370,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/12/01/Activiti并发问题/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/12/01/Activiti并发问题/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -405,7 +415,7 @@
       
 
       
-        
+        <h2 id="问题抛出"><a href="#问题抛出" class="headerlink" title="问题抛出"></a>问题抛出</h2>
       
     </div>
     
@@ -505,9 +515,7 @@
 
   
     <div class="comments" id="comments">
-      <div id="lv-container" data-id="city" data-uid="MTAyMC80MTMzOS8xNzg4Ng"></div>
     </div>
-
   
 
 
@@ -531,8 +539,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -610,6 +627,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题抛出"><span class="nav-number">1.</span> <span class="nav-text">问题抛出</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -785,26 +818,37 @@
 
 
   
-    <script type="text/javascript">
-      (function(d, s) {
-        var j, e = d.getElementsByTagName(s)[0];
-        if (typeof LivereTower === 'function') { return; }
-        j = d.createElement(s);
-        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-        j.async = true;
-        e.parentNode.insertBefore(j, e);
-      })(document, 'script');
-    </script>
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
   
-
-
-
-
-
-
-
-
-
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'GCERfJxcJ34uxCs2zwOamYqg-gzGzoHsz',
+        appKey: 'osCp78IUzvLoRd6oBob724ru',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 
