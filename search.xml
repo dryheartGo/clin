@@ -4,21 +4,33 @@
     <title><![CDATA[无重复字符的最长子串]]></title>
     <url>%2F2018%2F12%2F01%2FAlgorithm%2F%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2%2F</url>
     <content type="text"></content>
+      <categories>
+        <category>Algorithm</category>
+      </categories>
   </entry>
   <entry>
     <title><![CDATA[两数相加]]></title>
     <url>%2F2018%2F12%2F01%2FAlgorithm%2F%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0%2F</url>
     <content type="text"></content>
+      <categories>
+        <category>Algorithm</category>
+      </categories>
   </entry>
   <entry>
     <title><![CDATA[两数之和]]></title>
     <url>%2F2018%2F12%2F01%2FAlgorithm%2F%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C%2F</url>
-    <content type="text"><![CDATA[给定一个整数数组nums和一个目标值target，请你在该数组中找出和为目标值的两个整数。 你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。 示例:‘’’给定 nums = [2, 7, 11, 15], target = 9因为 nums[0] + nums[1] = 2 + 7 = 9所以返回 [0, 1]‘’’ Java实现123456789101112class Solution &#123; public int[] twoSum(int[] nums, int target) &#123; for (int i = 0; i &lt; nums.length; i++) &#123; for(int j = i + 1; j &lt; nums.length; j++) &#123; if (nums[i] + nums[j] == target) &#123; return new int[]&#123;i, j&#125;; &#125; &#125; &#125; return null; &#125;&#125;]]></content>
+    <content type="text"><![CDATA[给定一个整数数组nums和一个目标值target，请你在该数组中找出和为目标值的两个整数。 你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。示例:123给定 nums = [2, 7, 11, 15], target = 9因为 nums[0] + nums[1] = 2 + 7 = 9所以返回 [0, 1] Java实现123456789101112class Solution &#123; public int[] twoSum(int[] nums, int target) &#123; for (int i = 0; i &lt; nums.length; i++) &#123; for(int j = i + 1; j &lt; nums.length; j++) &#123; if (nums[i] + nums[j] == target) &#123; return new int[]&#123;i, j&#125;; &#125; &#125; &#125; return null; &#125;&#125;]]></content>
+      <categories>
+        <category>Algorithm</category>
+      </categories>
   </entry>
   <entry>
     <title><![CDATA[寻找两个有序数组的中位数]]></title>
     <url>%2F2018%2F12%2F01%2FAlgorithm%2F%E5%AF%BB%E6%89%BE%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0%2F</url>
     <content type="text"></content>
+      <categories>
+        <category>Algorithm</category>
+      </categories>
   </entry>
   <entry>
     <title><![CDATA[Activiti优化]]></title>
